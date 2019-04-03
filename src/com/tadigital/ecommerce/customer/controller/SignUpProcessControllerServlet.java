@@ -46,12 +46,12 @@ public class SignUpProcessControllerServlet extends HttpServlet{
 			
 			HttpSession s=req.getSession();
 			s.setAttribute("CUSTOMERDATA", customer);
-			s.setAttribute("check",1);
+			s.setAttribute("check","successregister");
 			RequestDispatcher rd = req.getRequestDispatcher("SignInSignUpForms.jsp");
 			rd.forward(req, resp);
 		} else {
 			HttpSession s=req.getSession();
-			s.setAttribute("check",-1);
+			s.setAttribute("check","failregsiter");
 			RequestDispatcher rd = req.getRequestDispatcher("SignInSignUpForms.jsp");
 			rd.forward(req, resp);
 		}
