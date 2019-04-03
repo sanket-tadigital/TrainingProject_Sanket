@@ -40,9 +40,6 @@ public class CustomerDao extends Dao {
 	
 	public boolean insertCustomer(Customer customer) {
 		boolean status = false;
-		
-
-		
 		Connection con = openConnection();
 		Statement stmt = openStatement(con);
 		
@@ -65,6 +62,32 @@ public class CustomerDao extends Dao {
 		return status;
 	}
 	
+	
+	public boolean updateCustomer(Customer customer) {
+		boolean status = false;
+		Connection con = openConnection();
+		Statement stmt = openStatement(con);
+		
+		try {
+			String sql = "UPDATE customer_info SET gender='"+customer.getgender()+"', address='"+customer.getaddress()+"', zip='"+customer.getzip()+
+						"', contact='"+customer.getcontact()+"', city='"+customer.getcity()+"', country='"+customer.getcountry()+"', state='"+customer.getstate()+"'";
+						
+			
+			int rows = stmt.executeUpdate(sql);
+			if(rows != 0) {
+				status = true;
+			}
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		} finally {
+			closeStatement(stmt);
+			closeConnection(con);
+		}
+		
+		return status;
+	}
+
+	
 	public ArrayList<Customer> selectAllCustomer() {
 		ArrayList<Customer> customerList = new ArrayList<>(); 
 		
@@ -81,11 +104,8 @@ public class CustomerDao extends Dao {
 				customer.setid(rs.getInt(1));
 				customer.setfname(rs.getString(2));
 				customer.setlname(rs.getString(3));
-				
-				
-				
-				customer.setemail(rs.getString(5));
-				customer.setpassword(rs.getString(6));
+				customer.setemail(rs.getString(11));
+				customer.setpassword(rs.getString(12));
 				
 				customerList.add(customer);
 			}
