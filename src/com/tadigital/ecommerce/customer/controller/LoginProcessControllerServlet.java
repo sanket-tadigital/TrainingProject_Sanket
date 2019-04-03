@@ -29,13 +29,13 @@ public class LoginProcessControllerServlet extends HttpServlet {
 		if(status) {
 			HttpSession ses = req.getSession();
 			ses.setAttribute("CUSTOMERDATA", customer);
-			ses.setAttribute("check",2);
+			ses.setAttribute("check","successlogin");
 			RequestDispatcher rd = req.getRequestDispatcher("CustomerAccount.jsp");
 			rd.forward(req, resp);
 		} else {
 			HttpSession ses = req.getSession();
 			ses.setAttribute("CUSTOMERDATA", customer);
-			ses.setAttribute("check",0);
+			ses.setAttribute("check","faillogin");
 			RequestDispatcher rd = req.getRequestDispatcher("SignInSignUpForms.jsp");
 			rd.forward(req, resp);
 		}
