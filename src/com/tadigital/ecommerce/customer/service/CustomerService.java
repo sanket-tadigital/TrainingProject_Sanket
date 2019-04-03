@@ -48,7 +48,11 @@ public class CustomerService {
 		
 		return status;
 	}
-	
+	public boolean UpdateProfile(Customer customer) {
+		boolean status =customerDao.updateCustomer(customer);
+		
+		return status;
+	}
 	public ArrayList<Customer> getAllCustomer() {
 		ArrayList<Customer> customerList = customerDao.selectAllCustomer();
 		
