@@ -20,6 +20,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -42,22 +43,80 @@ public class CustomerService {
 		
 		return status;
 	}
-	
-	public boolean registerCustomer(Customer customer) {
-		boolean status =customerDao.insertCustomer(customer);
+	public boolean loginCookie(Customer customer) {
+		boolean status = customerDao.selectCustomerByEmailAndLogintime(customer);
 		
 		return status;
 	}
+	public boolean CreateCookie(Customer customer) {
+		boolean status = customerDao.updatelastlogin(customer);
+		return status;
+	}
+	public boolean registerCustomer(Customer customer) {
+		boolean status =customerDao.insertCustomer(customer);
+		return status;
+	}
+	
 	public boolean UpdateProfile(Customer customer) {
 		boolean status =customerDao.updateCustomer(customer);
 		
 		return status;
 	}
-	public ArrayList<Customer> getAllCustomer() {
-		ArrayList<Customer> customerList = customerDao.selectAllCustomer();
 		
-		return customerList;
+	public boolean ChangePassword(Customer customer, String oldpass) {
+		boolean status =customerDao.updatePassword(customer,oldpass);
+		return status;
 	}
+	
+	
+	public String sendSecurityMail(String name, String email) {
+		String set = "NOT SENT";
+		
+		//MAIL SERVER CONFIGURATION
+		Properties properties = new Properties();
+		properties.put("mail.smtp.host", "smtp.gmail.com");
+		properties.put("mail.smtp.socketFactory.port", "465");
+		properties.put("mail.smtp.socketFactory.class",	"javax.net.ssl.SSLSocketFactory");
+		properties.put("mail.smtp.auth", "true");
+		properties.put("mail.smtp.port", "465");
+		
+		//CONNECT TO MAIL SERVER
+		Session session = Session.getDefaultInstance(properties,new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication()
+				{
+				return new PasswordAuthentication("training.project.sanket@gmail.com","#Iliket0c0de");
+				}
+			});
+
+		try {
+			//COMPOSE MESSAGE
+		MimeMessage mimeMessage = new MimeMessage(session);
+		mimeMessage.setFrom(new InternetAddress("training.project.sanket@gmail.com"));
+		mimeMessage.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
+		mimeMessage.setSubject("SECURITY ALERT FOR YOUR PROFILE");
+		MimeMultipart mp = new MimeMultipart();
+		MimeBodyPart mbp1 = new MimeBodyPart();
+			
+			String msg = "<body bgcolor='white'>Dear <i><font color='blue'>" + name + "</font></i>,<br/><br/>"
+					+ "<br/><h2><font color='red'>Your Password has been changed recently.</font></h2>"
+					+ "<br/><br/><br/><font color='green'>If you did not do this activity please contact our customer care immediately.</font>"
+					+ "<br/><br/><br/><font color='red'>Happy Ecommercing!!!<br/>TA Digital<br/><br/></font></body>";
+			
+			mbp1.setContent(msg, "text/html");
+			mp.addBodyPart(mbp1);
+			mimeMessage.setContent(mp);
+
+			// SEND MAIL
+			Transport.send(mimeMessage);
+			
+			set = "SENT";
+		} catch (MessagingException mex) {
+			mex.printStackTrace();
+		}
+		
+		return set;
+	}
+
 	
 	public String sendWelcomeMail(String name, String email) {
 		String set = "NOT SENT";
@@ -121,21 +180,42 @@ public class CustomerService {
 
 		return set;
 	}
-}
-		
-	/*	try {
+	
+	
+	public String sendReportMessage(String report) {
+	String set = "NOT SENT";
+	
+	//MAIL SERVER CONFIGURATION
+	Properties properties = new Properties();
+	properties.put("mail.smtp.host", "smtp.gmail.com");
+	properties.put("mail.smtp.socketFactory.port", "465");
+	properties.put("mail.smtp.socketFactory.class",	"javax.net.ssl.SSLSocketFactory");
+	properties.put("mail.smtp.auth", "true");
+	properties.put("mail.smtp.port", "465");
+	
+	//CONNECT TO MAIL SERVER
+	Session session = Session.getDefaultInstance(properties,new javax.mail.Authenticator() {
+		protected PasswordAuthentication getPasswordAuthentication()
+			{
+			return new PasswordAuthentication("training.project.sanket@gmail.com","#Iliket0c0de");
+			}
+		});
+
+		try {
 			//COMPOSE MESSAGE
 			MimeMessage mimeMessage = new MimeMessage(session);
 			mimeMessage.setFrom(new InternetAddress("training.project.sanket@gmail.com"));
-			mimeMessage.setRecipients(Message.RecipientType.TO,	InternetAddress.parse(email));
-			mimeMessage.setRecipients(Message.RecipientType.TO,	InternetAddress.parse(email));
-			mimeMessage.setRecipients(Message.RecipientType.CC,	InternetAddress.parse(email));
-			mimeMessage.setRecipients(Message.RecipientType.CC,	InternetAddress.parse(email));
-			mimeMessage.setRecipients(Message.RecipientType.BCC, InternetAddress.parse(email));
-			mimeMessage.setSubject("Welcome to TA Digital Online Shopping Portal.");
-			String msg = "Dear " + name + ",\n\n<img src='images/product4.jpg'>" +
-						 "Thanks for Registering on our portal." +
-						 "\nWelcome to TA Digital Family." +
+			mimeMessage.setRecipients(Message.RecipientType.TO,	InternetAddress.parse("sanketsinha1811@gmail.com"));
+			mimeMessage.setRecipients(Message.RecipientType.TO,	InternetAddress.parse("sanketsinha1811@gmail.com"));
+			mimeMessage.setRecipients(Message.RecipientType.CC,	InternetAddress.parse("sanketsinha1811@gmail.com"));
+			mimeMessage.setRecipients(Message.RecipientType.CC,	InternetAddress.parse("sanketsinha1811@gmail.com"));
+			mimeMessage.setRecipients(Message.RecipientType.BCC, InternetAddress.parse("sanketsinha1811@gmail.com"));
+			mimeMessage.setSubject("Bug Report");
+			
+		
+			String msg = "Dear " + 
+						 "Find the bug report below" +
+						 "\n\n" +report+
 						 "\n\nThanks & Regards" +
 						 "\nTA Digital";
 			mimeMessage.setText(msg);
@@ -143,12 +223,12 @@ public class CustomerService {
 			//SEND MAIL
 			Transport.send(mimeMessage);
 			
-			status = "SENT";
+			set = "SENT";
 		} catch (MessagingException mex) {
 			mex.printStackTrace();
 		}
 		
-		return status;
+		return set;
 	}
-}*/
+}
 
