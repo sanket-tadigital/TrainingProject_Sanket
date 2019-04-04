@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page isErrorPage="true" %>
+<%@page import="java.io.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -851,26 +852,74 @@
 			<br><br>
 			
 			<!-- ROW 4 STARTS -->
-				<div class="row init_margin">
-				<div class="md-col-10">
+				<div class="row">
+				<div class="md-col-10 ccrm">
 				<br/>
 				<br/>
-				<center>
 				<hr>
 				<span class="top_text"><strong>Sorry for the inconvenience - The Page you are looking for have a Technical Error </strong></span>
 				<br/>
 				<span class="normal_text">Kindly proceed to the Home page or Report this issue to Website Administrator with the Description mentioned below:</span>
 				<br/><br/>
-				<button class="sub40"><span class="glyphicon glyphicon-home"> Home</span></button>
-				<button class="sub40"><span class="glyphicon glyphicon-eye-close"> Report</span></button>
-				<br/><br/>
-				<div class="alert alert-danger fade in"><%= exception.getStackTrace() %></div>
-				<br/>
-				<br/>
-				<hr>
+			
+				<div class="row cccrr">
+				<center>
+				<div class="col-md-4 cc">
+				<form action="HomePage.jsp" method="get">
+				<button type="submit" class="sub40"><span class="glyphicon glyphicon-home"></span> Home</button>
+				</form>
+				</div>
+				<div class="col-md-1">
+				<form action="report" method="get">
+				<button type="submit" class="sub42"><span class="glyphicon glyphicon-eye-close"></span>Report</button>
+				</form>
+				</div>
 				</center>
 				</div>
-			</div>
+				<hr>
+				</div>
+				<br>
+				<div class="row">
+				<div class="col-md-8 ccrm">
+				<%
+							StringWriter sw = new StringWriter();
+ 							PrintWriter pw = new PrintWriter(sw);
+ 							exception.printStackTrace(pw);
+ 							String report = sw.toString(); // stack trace as a string
+ 							//System.out.println(excep); 
+ 							session.setAttribute("report",report);
+ 				%>
+ 				
+ 				<div class="alert alert-danger" role="alert">
+  				<%= session.getAttribute("report")%>
+				</div>
+				<%
+					if(!session.isNew())
+						 					{
+									 	String c;
+					 					 c=(String)session.getAttribute("check");
+										if(c!=null)
+										{
+					 		if (c =="failreport") {
+				%>
+				<div class="alert alert-danger fade in">Cannot Send Report</div>
+				<%
+					}
+							if (c == "successreport") {
+				%>
+				<div class="alert alert-success">Reported Bug Successfully</div>
+				<%
+					}
+
+						}
+					session.setAttribute("check",null);
+					}
+				%>
+ 				</div>
+				</div>
+				
+				</div>
+				
 			<!-- ROW 4 ENDS -->
 			
 			 	<!-- ROW6 STARTS -->
