@@ -861,7 +861,7 @@
 	 			<!-- COL1 STARTS -->
 	 			<div class="col-md-6 cc">
 	 				<div class="row">
-	 				<form name="passchange" action="passwordchange" method="post"> 
+	 				<form name="passwordchange" action="passwordchange" method="post"> 
 	 				<br>
 	 				<h3 class="mrgrey">Change your personal details or your password here.</h2>
 					<br>
@@ -879,7 +879,7 @@
 							<!-- INNER COL1 STARTS -->
 	 						<div class="col-md-6 mrgrey">
 	 							Old Password<br>
-	 							<input type="text" class="form-control" size="100">
+	 							<input type="text" name="t1" class="form-control" size="100">
 	 						</div>
 	 						<!-- INNER COL1 ENDS -->
 	 						
@@ -900,14 +900,15 @@
 	 						<!-- INNER COL1 STARTS -->
 	 						<div class="col-md-6 mrgrey">
 	 							New Password<br>
-	 							<input type="text" class="form-control" size="100">
+	 							<input type="text" name="t2" class="form-control" size="100">
 	 						</div>
 	 						<!-- INNER COL1 ENDS -->
 	 						
 	 						<!-- INNER COL2 STARTS -->
 	 						<div class="col-md-6 mrgrey">
 	 							Retype New Password<br>
-	 							<input type="text" class="form-control" size="100">
+	 							<input type="text" name="t3" class="form-control" size="100">
+	 							
 	 						</div>
 	 						<!-- INNER COL2 ENDS -->
 	 							
@@ -921,10 +922,11 @@
 	 						<!-- INNER COL1 STARTS -->
 	 						<div class="col-md-12 cc">
 	 							<br>
-	 							<button type="submit" class="sub4"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;SAVE MY PASSWORD</button>
+	 							<button type="submit" class="sub40"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;SAVE MY PASSWORD</button>
 	 							<br>
 	 							<hr>
 	 						</div>
+	 						
 	 						
 	 						<!-- INNER COL1 ENDS -->
 	 					
@@ -932,6 +934,24 @@
 	 					<!-- INNER ROW3 ENDS -->
 	 					</form>
 	 					</div>
+	 					<%
+	 					String  d= (String)session.getAttribute("check");
+	 					if(d!=null)
+	 					{
+	 					if(d=="changesuccess")
+	 					{
+	 						%>
+	 							<div class="alert alert-success">Update Successful</div>
+	 					<%
+	 					}
+	 					if(d=="changefail"){
+	 						%>
+	 						<div class="alert alert-danger fade in">Update Failed</div>
+	 					<%
+	 					}
+	 						
+	 					}
+	 					%>
 	 					<br><br>
 	 					
 	 					<div class="row">
@@ -1077,7 +1097,7 @@
 	 						<!-- INNER COL1 STARTS -->
 	 						<div class="col-md-12 cc">
 	 							<br>
-	 							<button type="submit" class="sub4"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;SAVE CHANGES</button>
+	 							<button type="submit" class="sub40"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;SAVE CHANGES</button>
 	 							<br>
 	 							<hr>
 	 						</div>
@@ -1087,16 +1107,16 @@
 	 					</div>
 	 					<div class="row">
 	 					<%
-	 					String  d= (String)session.getAttribute("check");
-	 					if(d!=null)
+	 					String  da= (String)session.getAttribute("check");
+	 					if(da!=null)
 	 					{
-	 					if(d=="successupdate")
+	 					if(da=="successupdate")
 	 					{
 	 						%>
 	 							<div class="alert alert-success">Update Successful</div>
 	 					<%
 	 					}
-	 					if(d=="failupdate"){
+	 					if(da=="failupdate"){
 	 						%>
 	 						<div class="alert alert-danger fade in">Update Failed</div>
 	 					<%
@@ -1203,7 +1223,7 @@
 
 			
 			<!-- COL1 STARTS -->
-			<div div class="col-md-3 cc">
+			<div class="col-md-3 cc">
 				<br>
 				<p style="color: white;"><span class="glyphicon glyphicon-copyright-mark"> 2018</span>
 				TechAspect Solutions Private Limited
