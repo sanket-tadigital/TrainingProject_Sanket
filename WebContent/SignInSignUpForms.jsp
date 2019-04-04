@@ -33,6 +33,25 @@
  	
 	</head>
 	
+	<%
+			
+					//READ COOKIES FROM REQUEST
+					Cookie[] allCookies = request.getCookies();
+					if (allCookies != null) {
+						//SEARCH YOUR WEBSITE COOKIE
+						for (Cookie cookie : allCookies) {
+							String cName = cookie.getName();
+							if (cName.equals("stayin")) {
+								String cValue = cookie.getValue();
+								session.setAttribute("COOKIEVALUE", cValue);
+								response.sendRedirect("loginnn");
+								break;
+							}
+						}
+					}
+			
+		%>
+	
 	<!-- BODY STARTS -->
 	<body>
 		<!-- CONTAINER STARTS -->
@@ -880,7 +899,7 @@
 							Password<br><br>
 	 						<input type="password" name="f3" class="form-control" size="50">
 	 						<br><br>
-	 						<button type="submit" class="sub4"><span class="glyphicon">&#xe008;</span>&nbsp;&nbsp;REGISTER</button>
+	 						<button type="submit" class="sub40"><span class="glyphicon">&#xe008;</span>&nbsp;&nbsp;REGISTER</button>
 	 				</p>
 
 				<%
@@ -927,8 +946,10 @@
 	 				<br><br>
 					Password<br><br>
 	 				<input type="password" class="form-control" size="50" name="f2">
-					<br><br>
-					<button type="submit" class="btn btn-default sub"><span class="glyphicon">&#xe161;</span>&nbsp;&nbsp;LOG IN</button>
+					<br>
+					<input type="checkbox" name="f3" value="yes">Stay Signed In
+					<br>
+					<button type="submit" class="sub40"><span class="glyphicon">&#xe161;</span>&nbsp;&nbsp;LOG IN</button>
 				</p>
 				<%
 					if (!session.isNew()) {
