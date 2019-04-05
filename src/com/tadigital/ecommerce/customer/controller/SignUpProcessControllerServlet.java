@@ -1,4 +1,5 @@
 package com.tadigital.ecommerce.customer.controller;
+
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import javax.servlet.*;
@@ -16,46 +17,49 @@ import com.tadigital.ecommerce.customer.service.CustomerService;
 
 @WebServlet("/register")
 
-public class SignUpProcessControllerServlet extends HttpServlet{
+public class SignUpProcessControllerServlet extends HttpServlet {
 
-	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		/*TAKING DATA FROM FORM*/
 		String Name = req.getParameter("f1");
 		String email = req.getParameter("f2");
 		String password = req.getParameter("f3");
-		String array1[]=Name.split(" ");
-    	String fname;
-    	String lname="";
-    	fname=array1[0];
-    	//lname=array1[1];
-		int n=array1.length;
-		for(int i=1;i<n;i++)
-		{
-			lname=lname+" "+array1[i];
+		
+		/*SEPERATING FIRST NAME AND LAST NAME*/
+		String array1[] = Name.split(" ");
+		String fname;
+		String lname = "";
+		fname = array1[0];
+		int n = array1.length;
+		for (int i = 1; i < n; i++) {
+			lname = lname + " " + array1[i];
 		}
+		
+		/*SETTING VALUES IN CUSTOMER OBJECT*/
 		Customer customer = new Customer();
 		customer.setfname(fname);
 		customer.setlname(lname);
 		customer.setemail(email);
 		customer.setpassword(password);
+		
 		CustomerService customerService = new CustomerService();
-		boolean status = customerService.registerCustomer(customer);
-		String status2=customerService.sendWelcomeMail(Name, email);
-		if(status & status2=="SENT") {
-			
-			HttpSession s=req.getSession();
+		boolean status = customerService.registerCustomer(customer);			//CALLING SERVICE TO REGISTER CUSTOMER
+		String status2 = customerService.sendWelcomeMail(Name, email);			//CALLING SERVICE TO SEND MAIL FOR REGISTRATION
+		
+		if (status & status2 == "SENT") {
+
+			HttpSession s = req.getSession();
 			s.setAttribute("CUSTOMERDATA", customer);
-			s.setAttribute("check","successregister");
+			s.setAttribute("check", "successregister");							//SETTING SESSION VARIABLE TO CONFIRM SUCCESSFUL REGISTRATION
 			RequestDispatcher rd = req.getRequestDispatcher("SignInSignUpForms.jsp");
 			rd.forward(req, resp);
 		} else {
-			HttpSession s=req.getSession();
-			s.setAttribute("check","failregsiter");
+			HttpSession s = req.getSession();
+			s.setAttribute("check", "failregsiter");							//SETTING SESSION VARIABLE TO CONFIRM FAILED REGISTRATION
 			RequestDispatcher rd = req.getRequestDispatcher("SignInSignUpForms.jsp");
 			rd.forward(req, resp);
 		}
 	}
 }
-
-	
