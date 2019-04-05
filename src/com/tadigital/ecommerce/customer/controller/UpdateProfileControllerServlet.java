@@ -18,9 +18,10 @@ public class UpdateProfileControllerServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		String fname=req.getParameter("f1");
-		String lname=req.getParameter("f2");
+
+		/*TAKING DATA FROM FORM*/
+		String fname = req.getParameter("f1");
+		String lname = req.getParameter("f2");
 		String gender = req.getParameter("f3");
 		String address = req.getParameter("f4");
 		String city = req.getParameter("f5");
@@ -28,8 +29,11 @@ public class UpdateProfileControllerServlet extends HttpServlet {
 		String state = req.getParameter("f7");
 		String country = req.getParameter("f8");
 		String contact = req.getParameter("f9");
-		String email=req.getParameter("f10");
+		String email = req.getParameter("f10");
+		
 		Customer customer = new Customer();
+		
+		/*SETTING VARIABLE IN CUSTOMER OBJECT*/
 		customer.setgender(gender);
 		customer.setaddress(address);
 		customer.setcity(city);
@@ -40,20 +44,22 @@ public class UpdateProfileControllerServlet extends HttpServlet {
 		customer.setemail(email);
 		customer.setfname(fname);
 		customer.setlname(lname);
+		
 		CustomerService customerService = new CustomerService();
-		boolean status = customerService.UpdateProfile(customer);	
-		if(status) {
+		boolean status = customerService.UpdateProfile(customer);		//UPDATE PROFILE SERVICE CALLED
+		
+		if (status) {													//CHECKING STATUS FOR UPDATE FUNCTION
 			HttpSession ses = req.getSession();
 			ses.setAttribute("CUSTOMERDATA", customer);
-			ses.setAttribute("check","successupdate");
+			ses.setAttribute("check", "successupdate");					//SETTING SESSION VARIABLE TO SEND SUCCESSFUL UPDATE MESSAGE
 			RequestDispatcher rd = req.getRequestDispatcher("CustomerAccount.jsp");
 			rd.forward(req, resp);
 		} else {
 			HttpSession ses = req.getSession();
 			ses.setAttribute("CUSTOMERDATA", customer);
-			ses.setAttribute("check","failupdate");
+			ses.setAttribute("check", "failupdate");					//SETTING SESSION VARIABLE TO SEND UNSUCCESSFUL UPDATE MESSAGE
 			RequestDispatcher rd = req.getRequestDispatcher("CustomerAccount.jsp");
 			rd.forward(req, resp);
 		}
-		}
+	}
 }
