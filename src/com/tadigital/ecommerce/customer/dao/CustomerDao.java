@@ -6,14 +6,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-
 import com.tadigital.ecommerce.customer.entity.Customer;
 
 public class CustomerDao extends Dao {
-	
-	
-	/*FOR LOGIN AUTHENTICATION*/
 
+	/* FOR LOGIN AUTHENTICATION */
 	public boolean selectCustomerByEmailAndPassword(Customer customer) {
 		boolean status = false;
 		Connection con = openConnection();
@@ -23,14 +20,13 @@ public class CustomerDao extends Dao {
 		try {
 			String sql = "SELECT * FROM customer_info WHERE email = '" + customer.getemail() + "' AND password = '"
 					+ customer.getpassword() + "'";
-
 			rs = stmt.executeQuery(sql);
+
 			if (rs.next()) {
 				status = true;
 				customer.setid(rs.getInt(1));
 				customer.setfname(rs.getString(2));
 				customer.setlname(rs.getString(3));
-
 			}
 		} catch (SQLException sqle) {
 			sqle.printStackTrace();
@@ -42,16 +38,16 @@ public class CustomerDao extends Dao {
 
 		return status;
 	}
-	
-	/*Create New Cookie*/
+
+	/* Create New Cookie */
 	public boolean updatelastlogin(Customer customer) {
 		boolean status = false;
 		Connection con = openConnection();
 		Statement stmt = openStatement(con);
 
 		try {
-			String sql = "UPDATE customer_info SET lastlogin='" + customer.getlastlogin() + "' WHERE email='" + customer.getemail() + "'";
-
+			String sql = "UPDATE customer_info SET lastlogin='" + customer.getlastlogin() + "' WHERE email='"
+					+ customer.getemail() + "'";
 			int rows = stmt.executeUpdate(sql);
 			if (rows != 0) {
 				status = true;
@@ -62,11 +58,10 @@ public class CustomerDao extends Dao {
 			closeStatement(stmt);
 			closeConnection(con);
 		}
-
 		return status;
 	}
-	
-	/*Login via Cookie*/
+
+	/* Login via Cookie */
 	public boolean selectCustomerByEmailAndLogintime(Customer customer) {
 		boolean status = false;
 		Connection con = openConnection();
@@ -75,15 +70,13 @@ public class CustomerDao extends Dao {
 
 		try {
 			String sql = "SELECT * FROM customer_info WHERE email = '" + customer.getemail() + "' AND lastlogin = '"
-					+ customer.getlastlogin()+ "'";
-
+					+ customer.getlastlogin() + "'";
 			rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				status = true;
 				customer.setid(rs.getInt(1));
 				customer.setfname(rs.getString(2));
 				customer.setlname(rs.getString(3));
-
 			}
 		} catch (SQLException sqle) {
 			sqle.printStackTrace();
@@ -95,10 +88,8 @@ public class CustomerDao extends Dao {
 
 		return status;
 	}
-	
-	/*FOR REGISTRATION OF NEW USER*/
-	
-	
+
+	/* FOR REGISTRATION OF NEW USER */
 	public boolean insertCustomer(Customer customer) {
 		boolean status = false;
 		Connection con = openConnection();
@@ -122,9 +113,7 @@ public class CustomerDao extends Dao {
 
 		return status;
 	}
-	
-	
-	
+
 	/* FOR ACCOUNT DEATILS UPDATE */
 	public boolean updateCustomer(Customer customer) {
 		boolean status = false;
@@ -151,9 +140,7 @@ public class CustomerDao extends Dao {
 		return status;
 	}
 
-
-	/*FOR PASSWORD CHANGE*/
-
+	/* FOR PASSWORD CHANGE */
 	public boolean updatePassword(Customer customer, String oldpass) {
 		boolean status = false;
 		Connection con = openConnection();
@@ -171,10 +158,7 @@ public class CustomerDao extends Dao {
 			closeStatement(stmt);
 			closeConnection(con);
 		}
-
 		return status;
 	}
-	
-	
-}
 
+}
