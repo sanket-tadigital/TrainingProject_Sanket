@@ -1,6 +1,5 @@
 package com.tadigital.ecommerce.customer.controller;
 
-
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -19,13 +18,15 @@ import com.tadigital.ecommerce.customer.service.CustomerService;
 public class LogoutProcessControllerServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		HttpSession ses = req.getSession();
-		Cookie cookie = new Cookie("stayin", "killshot");
+		HttpSession session = req.getSession();
+		session.invalidate();												//INVALIDATING CURRENT SESSION
+		
+		Cookie cookie = new Cookie("stayin", "killshot");					//DELETING COOKIE TO LOGOUT 'STAY SIGNED IN' USERS
 		cookie.setMaxAge(0);
 		resp.addCookie(cookie);
-		ses.invalidate();
-		RequestDispatcher rd = req.getRequestDispatcher("HomePage.jsp");
+		
+		
+		RequestDispatcher rd = req.getRequestDispatcher("HomePage.jsp");	//REDIRECTING TO HOME PAGE
 		rd.forward(req, resp);
 	}
 }
-
