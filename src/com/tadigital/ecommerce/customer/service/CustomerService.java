@@ -90,7 +90,7 @@ public class CustomerService {
 		// CONNECT TO MAIL SERVER
 		Session session = Session.getDefaultInstance(properties, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("training.project.sanket@gmail.com", "#Iliket0c0de");
+				return new PasswordAuthentication("training.project.sanket@gmail.com", "xxxxxxxx");
 			}
 		});
 
@@ -138,7 +138,7 @@ public class CustomerService {
 		// CONNECT TO MAIL SERVER
 		Session session = Session.getDefaultInstance(properties, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("training.project.sanket@gmail.com", "#Iliket0c0de");
+				return new PasswordAuthentication("training.project.sanket@gmail.com", "xxxxxxxxx");
 			}
 		});
 		try {
@@ -196,7 +196,7 @@ public class CustomerService {
 		// CONNECT TO MAIL SERVER
 		Session session = Session.getDefaultInstance(properties, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("training.project.sanket@gmail.com", "#Iliket0c0de");
+				return new PasswordAuthentication("training.project.sanket@gmail.com", "xxxxxxxxxxx");
 			}
 		});
 
@@ -240,7 +240,7 @@ public class CustomerService {
 		// CONNECT TO MAIL SERVER
 		Session session = Session.getDefaultInstance(properties, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("training.project.sanket@gmail.com", "#Iliket0c0de");
+				return new PasswordAuthentication("training.project.sanket@gmail.com", "xxxxxxxxx");
 			}
 		});
 
