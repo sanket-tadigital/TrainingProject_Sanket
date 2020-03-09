@@ -50,7 +50,7 @@
 	<%
 		String c = (String) session.getAttribute("check");
 		if (c != null) {
-			if (c == "successlogin" && session.isNew()) {
+			if (c == "successlogin") {
 				out.print("<script language='javascript'>window.alert('Welcome Back')</script>");
 			}
 		}

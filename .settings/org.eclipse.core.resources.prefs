@@ -1,2 +1,5 @@
 eclipse.preferences.version=1
+encoding//WebContent/CustomerOrderDetails.jsp=UTF-8
+encoding//WebContent/CustomerOrders.jsp=UTF-8
+encoding//WebContent/CustomerWishList.jsp=UTF-8
 encoding//WebContent/HomePage.jsp=UTF-8

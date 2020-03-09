@@ -78,8 +78,7 @@
 			</div>
 			<!-- COL3 ENDS -->
 
-			<br>
-			<br>
+			<br> <br>
 
 		</div>
 		<!-- ROW 1 ENDS -->
@@ -843,8 +842,7 @@
 
 		</div>
 		<!-- ROW2 ENDS -->
-		<br>
-		<br>
+		<br> <br>
 
 
 
@@ -891,14 +889,12 @@
 
 		<!-- ROW4 ENDS -->
 
-		<br>
-		<br>
+		<br> <br>
 		<div class="row">
 			<div class="col-md-3">
 				<div class="card">
 					<div class="card-body text-center">
-						<img src="images/4.jpg" class="pro6"> <br>
-						<br>
+						<img src="images/4.jpg" class="pro6"> <br> <br>
 					</div>
 
 				</div>
@@ -907,8 +903,7 @@
 			<div class="col-md-3">
 				<div class="card">
 					<div class="card-body text-center">
-						<img src="images/1.jpg" class="pro6"> <br>
-						<br>
+						<img src="images/1.jpg" class="pro6"> <br> <br>
 					</div>
 
 				</div>
@@ -917,8 +912,7 @@
 			<div class="col-md-3">
 				<div class="card">
 					<div class="card-body text-center">
-						<img src="images/5.jpg" class="pro6"> <br>
-						<br>
+						<img src="images/5.jpg" class="pro6"> <br> <br>
 					</div>
 
 				</div>
@@ -927,8 +921,7 @@
 			<div class="col-md-3">
 				<div class="card">
 					<div class="card-body text-center">
-						<img src="images/2.jpg" class="pro6"> <br>
-						<br>
+						<img src="images/2.jpg" class="pro6"> <br> <br>
 					</div>
 
 				</div>
@@ -940,8 +933,7 @@
 			<div class="col-md-3">
 				<div class="card">
 					<div class="card-body text-center">
-						<img src="images/11.jpg" class="pro6"> <br>
-						<br>
+						<img src="images/11.jpg" class="pro6"> <br> <br>
 					</div>
 
 				</div>
@@ -950,8 +942,7 @@
 			<div class="col-md-3">
 				<div class="card">
 					<div class="card-body text-center">
-						<img src="images/5.jpg" class="pro6"> <br>
-						<br>
+						<img src="images/5.jpg" class="pro6"> <br> <br>
 					</div>
 
 				</div>
@@ -960,8 +951,7 @@
 			<div class="col-md-3">
 				<div class="card">
 					<div class="card-body text-center">
-						<img src="images/333.jpg" class="pro6"> <br>
-						<br>
+						<img src="images/333.jpg" class="pro6"> <br> <br>
 					</div>
 
 				</div>
@@ -970,8 +960,7 @@
 			<div class="col-md-3">
 				<div class="card">
 					<div class="card-body text-center">
-						<img src="images/4.jpg" class="pro6"> <br>
-						<br>
+						<img src="images/4.jpg" class="pro6"> <br> <br>
 					</div>
 
 				</div>
@@ -999,8 +988,7 @@
 
 
 
-		<br>
-		<br>
+		<br> <br>
 
 		<!-- ROW3 STARTS -->
 		<!-- NEW ROW -->
@@ -1019,12 +1007,14 @@
 
 					<!-- Wrapper for slides -->
 					<div class="carousel-inner">
-						
-							<div class="item active">
-								<div class="col-md-2">
+
+						<div class="item active">
+							<div class="col-md-2">
 								<div class="card">
 									<div class="card-body text-center borman">
-										<br> <img src="images/images/mi-redmi-e7t-na-original-imafazxdh2bd6hep.jpeg"class="pro4"> <br> <br>
+										<br> <img
+											src="images/images/mi-redmi-e7t-na-original-imafazxdh2bd6hep.jpeg"
+											class="pro4"> <br> <br>
 										<p class="card-text">
 											<b>Redmi Note 6 Pro</b>
 										</p>
@@ -1103,28 +1093,27 @@
 							</div>
 						</div>
 
-						
-					
 
-					<!-- Left and right controls -->
-					<a class="left carousel-control" href="#myCarousel"
-						data-slide="prev"> <span
-						class="glyphicon glyphicon-chevron-left"></span> <span
-						class="sr-only">Previous</span>
-					</a> <a class="right carousel-control" href="#myCarousel"
-						data-slide="next"> <span
-						class="glyphicon glyphicon-chevron-right"></span> <span
-						class="sr-only">Next</span>
-					</a>
+
+
+						<!-- Left and right controls -->
+						<a class="left carousel-control" href="#myCarousel"
+							data-slide="prev"> <span
+							class="glyphicon glyphicon-chevron-left"></span> <span
+							class="sr-only">Previous</span>
+						</a> <a class="right carousel-control" href="#myCarousel"
+							data-slide="next"> <span
+							class="glyphicon glyphicon-chevron-right"></span> <span
+							class="sr-only">Next</span>
+						</a>
+					</div>
 				</div>
-			</div>
 
-		</div>
+			</div>
 		</div>
 		<!-- ROW 3 ENDS -->
 
-		<br>
-		<br>
+		<br> <br>
 
 
 
@@ -1133,20 +1122,18 @@
 
 		<div class="row">
 
-						<div class="col-md-2">
+			<div class="col-md-2">
 				<div class="card">
 					<div class="card-body text-center borman">
 						<br> <img
 							src="images/images/realme-c1-rmx1811-original-imaf9e7csexsdstd.jpeg"
-							class="pro4"> <br>
-						<br>
+							class="pro4"> <br> <br>
 						<p class="card-text">
 							<b>Realme C1</b>
 						</p>
 						<p class="card-text mrgrey">13MP+2MP|5MP Camera</p>
 						<button type="button" class="btn1">VIEW</button>
-						<br>
-						<br>
+						<br> <br>
 					</div>
 
 				</div>
@@ -1157,15 +1144,13 @@
 					<div class="card-body text-center borman">
 						<br> <img
 							src="images/images/nokia-6-1-na-original-imaf892exbgttdpe.jpeg"
-							class="pro4"> <br>
-						<br>
+							class="pro4"> <br> <br>
 						<p class="card-text">
 							<b>Nokia 6.1 plus</b>
 						</p>
 						<p class="card-text mrgrey">15MP+5MP Camera</p>
 						<button type="button" class="btn1" width="100%">VIEW</button>
-						<br>
-						<br>
+						<br> <br>
 					</div>
 
 				</div>
@@ -1176,15 +1161,13 @@
 					<div class="card-body text-center borman">
 						<br> <img
 							src="images/images/lenovo-a5-padj0040cn-original-imafaycjjekkx5fg.jpeg"
-							class="pro4"> <br>
-						<br>
+							class="pro4"> <br> <br>
 						<p class="card-text">
 							<b>Lenovo A5</b>
 						</p>
 						<p class="card-text mrgrey">16MP|8MP Camera</p>
 						<button type="button" class="btn1" width="100%">VIEW</button>
-						<br>
-						<br>
+						<br> <br>
 					</div>
 
 				</div>
@@ -1195,15 +1178,13 @@
 					<div class="card-body text-center borman">
 						<br> <img
 							src="images/images/redmi-note-5-pro-na-original-imaf2ashnnbxxks5.jpeg"
-							class="pro4"> <br>
-						<br>
+							class="pro4"> <br> <br>
 						<p class="card-text">
 							<b>Redmi Note 5 pro</b>
 						</p>
 						<p class="card-text mrgrey">12MP+5MP Camera</p>
 						<button type="button" class="btn1" width="100%">VIEW</button>
-						<br>
-						<br>
+						<br> <br>
 					</div>
 
 				</div>
@@ -1225,17 +1206,14 @@
 			<div class="col-md-1">
 
 				<button type="button" class="btn btn-primary">VIEW ALL</button>
-				<br>
-				<br>
+				<br> <br>
 			</div>
 			<!-- COL2 ENDS -->
-			<br>
-			<br>
+			<br> <br>
 		</div>
 		<!-- ROW4 ENDS -->
 
-		<br>
-		<br>
+		<br> <br>
 
 
 
@@ -1246,15 +1224,13 @@
 					<div class="card-body text-center borman">
 						<br> <img
 							src="images/images/789546p-awesome-vstu-original-imaf7vtwezwbhuun.jpeg"
-							class="pro5"> <br>
-						<br>
+							class="pro5"> <br> <br>
 						<p class="card-text">
 							<b>Decorative Bottles</b>
 						</p>
 						<p class="card-text mrgrey">From Rs199</p>
 						<button type="button" class="btn1" width="100%">VIEW</button>
-						<br>
-						<br>
+						<br> <br>
 					</div>
 
 				</div>
@@ -1265,15 +1241,13 @@
 					<div class="card-body text-center borman">
 						<br> <img
 							src="images/images/handpainted-peacock-design-wwc5090-analog-craft-junction-original-imaeztzpekug2zq4.jpeg"
-							class="pro5"> <br>
-						<br>
+							class="pro5"> <br> <br>
 						<p class="card-text">
 							<b>Wall Clocks</b>
 						</p>
 						<p class="card-text mrgrey">Mininum 50% off</p>
 						<button type="button" class="btn1" width="100%">VIEW</button>
-						<br>
-						<br>
+						<br> <br>
 					</div>
 
 				</div>
@@ -1284,15 +1258,13 @@
 					<div class="card-body text-center borman">
 						<br> <img
 							src="images/images/kvm-cf-lb04-kraft-village-original-imaeg546agyjtzjx.jpeg"
-							class="pro5"> <br>
-						<br>
+							class="pro5"> <br> <br>
 						<p class="card-text">
 							<b>Feng Shui Showpieces</b>
 						</p>
 						<p class="card-text mrgrey">Under Rs999</p>
 						<button type="button" class="btn1">VIEW</button>
-						<br>
-						<br>
+						<br> <br>
 					</div>
 
 				</div>
@@ -1303,15 +1275,13 @@
 					<div class="card-body text-center borman">
 						<br> <img
 							src="images/images/sscdr-89-decorhand-original-imaeft3kefhg3zcb.jpeg"
-							class="pro5"> <br>
-						<br>
+							class="pro5"> <br> <br>
 						<p class="card-text">
 							<b>Wall Shelves</b>
 						</p>
 						<p class="card-text mrgrey">Upto 80% off</p>
 						<button type="button" class="btn1" width="100%">VIEW</button>
-						<br>
-						<br>
+						<br> <br>
 					</div>
 
 				</div>
@@ -1322,15 +1292,13 @@
 					<div class="card-body text-center borman">
 						<br> <img
 							src="images/images/123-lipax-original-imaf9e885guuzysg.jpeg"
-							class="pro5"> <br>
-						<br>
+							class="pro5"> <br> <br>
 						<p class="card-text">
 							<b>Laser Lights</b>
 						</p>
 						<p class="card-text mrgrey">Upto 60% off</p>
 						<button type="button" class="btn1" width="100%">VIEW</button>
-						<br>
-						<br>
+						<br> <br>
 					</div>
 
 				</div>
@@ -1341,15 +1309,13 @@
 					<div class="card-body text-center borman">
 						<br> <img
 							src="images/images/mahi-blue-a-basement-bazaar-original-imaegbhc5cddn8ke.jpeg"
-							class="pro5"> <br>
-						<br>
+							class="pro5"> <br> <br>
 						<p class="card-text">
 							<b>Hookahs & Bongs</b>
 						</p>
 						<p class="card-text mrgrey">Under Rs599</p>
 						<button type="button" class="btn1" width="100%">VIEW</button>
-						<br>
-						<br>
+						<br> <br>
 					</div>
 
 				</div>
@@ -1357,8 +1323,7 @@
 			<br> <br>
 		</div>
 
-		<br>
-		<br>
+		<br> <br>
 		<!-- ROW4 STARTS -->
 		<div class="row row_4">
 			<br>
@@ -1373,17 +1338,14 @@
 			<div class="col-md-1">
 
 				<button type="button" class="btn btn-primary">VIEW ALL</button>
-				<br>
-				<br>
+				<br> <br>
 			</div>
 			<!-- COL2 ENDS -->
-			<br>
-			<br>
+			<br> <br>
 		</div>
 		<!-- ROW4 ENDS -->
 
-		<br>
-		<br>
+		<br> <br>
 
 
 
@@ -1394,15 +1356,13 @@
 					<div class="card-body text-center borman">
 						<br> <img
 							src="images/images/onesize-m155gr1-fastrack-original-imaexwzhgpaw5zqu.jpeg"
-							class="pro5"> <br>
-						<br>
+							class="pro5"> <br> <br>
 						<p class="card-text">
 							<b>Ray-Ban,Fasttrack..</b>
 						</p>
 						<p class="card-text mrgrey">20-60% off</p>
 						<button type="button" class="btn1" width="100%">VIEW</button>
-						<br>
-						<br>
+						<br> <br>
 					</div>
 
 				</div>
@@ -1413,15 +1373,13 @@
 					<div class="card-body text-center borman">
 						<br> <img
 							src="images/images/38-inches-leather-belt-bt-1059041-belt-woodland-original-imaf5jgt3y4tg5jm.jpeg"
-							class="pro5"> <br>
-						<br>
+							class="pro5"> <br> <br>
 						<p class="card-text">
 							<b>Cross Woodland</b>
 						</p>
 						<p class="card-text mrgrey">Top Rated</p>
 						<button type="button" class="btn1" width="100%">VIEW</button>
-						<br>
-						<br>
+						<br> <br>
 					</div>
 
 				</div>
@@ -1432,15 +1390,13 @@
 					<div class="card-body text-center borman">
 						<br> <img
 							src="images/images/ad214-casio-original-imaer2c4hmdxkwqx.jpeg"
-							class="pro5"> <br>
-						<br>
+							class="pro5"> <br> <br>
 						<p class="card-text">
 							<b>Casio Maxima</b>
 						</p>
 						<p class="card-text mrgrey">Upto 50%</p>
 						<button type="button" class="btn1">VIEW</button>
-						<br>
-						<br>
+						<br> <br>
 					</div>
 
 				</div>
@@ -1451,15 +1407,13 @@
 					<div class="card-body text-center borman">
 						<br> <img
 							src="images/images/ex099-casio-original-imaeymepcz4eu5zz.jpeg"
-							class="pro5"> <br>
-						<br>
+							class="pro5"> <br> <br>
 						<p class="card-text">
 							<b>Casio, Fasttrack</b>
 						</p>
 						<p class="card-text mrgrey">10-50% off</p>
 						<button type="button" class="btn1" width="100%">VIEW</button>
-						<br>
-						<br>
+						<br> <br>
 					</div>
 
 				</div>
@@ -1470,15 +1424,13 @@
 					<div class="card-body text-center borman">
 						<br> <img
 							src="images/images/ng3039sp01c-fastrack-original-imaev2thd4f837wk.jpeg"
-							class="pro5"> <br>
-						<br>
+							class="pro5"> <br> <br>
 						<p class="card-text">
 							<b>Titan, Fastrack</b>
 						</p>
 						<p class="card-text mrgrey">20-80% off</p>
 						<button type="button" class="btn1" width="100%">VIEW</button>
-						<br>
-						<br>
+						<br> <br>
 					</div>
 
 				</div>
@@ -1489,15 +1441,13 @@
 					<div class="card-body text-center borman">
 						<br> <img
 							src="images/images/ng38022pp06cj-fastrack-original-imaetxgteqwhggpc.jpeg"
-							class="pro5"> <br>
-						<br>
+							class="pro5"> <br> <br>
 						<p class="card-text">
 							<b>Fastrack</b>
 						</p>
 						<p class="card-text mrgrey">Under Rs 999</p>
 						<button type="button" class="btn1" width="100%">VIEW</button>
-						<br>
-						<br>
+						<br> <br>
 					</div>
 
 				</div>
@@ -1505,15 +1455,13 @@
 			<br> <br>
 		</div>
 
-		<br>
-		<br>
+		<br> <br>
 
 
 
 		<!-- ROW6 STARTS -->
 		<div class="row row1">
-			<br>
-			<br>
+			<br> <br>
 
 			<!-- COL1 STARTS -->
 			<div class="col-md-3 cc">
@@ -1527,21 +1475,18 @@
 				<button class="button2 send">
 					<span class="glyphicon glyphicon-send"></span>
 				</button>
-				<br>
-				<br>
+				<br> <br>
 			</div>
 			<!-- COL1 ENDS -->
 
 			<!-- COL2 STARTS -->
 			<div class="col-md-3">
-				<b>BLOG<br>
-				<br> <img src="images/detailsquare1.jpg" height="40" width="40">&nbsp;&nbsp;
-					BLOG POST NAME<br>
-				<br> <img src="images/detailsquare2.jpg" height="40" width="40">&nbsp;&nbsp;
-					BLOG POST NAME<br>
-				<br> <img src="images/detailsquare3.jpg" height="40" width="40">&nbsp;&nbsp;
-					VERY VERY LONG BLOG POST NAME<br>
-				<br></b>
+				<b>BLOG<br> <br> <img src="images/detailsquare1.jpg"
+					height="40" width="40">&nbsp;&nbsp; BLOG POST NAME<br> <br>
+					<img src="images/detailsquare2.jpg" height="40" width="40">&nbsp;&nbsp;
+					BLOG POST NAME<br> <br> <img
+					src="images/detailsquare3.jpg" height="40" width="40">&nbsp;&nbsp;
+					VERY VERY LONG BLOG POST NAME<br> <br></b>
 			</div>
 			<!-- COL2 ENDS -->
 
@@ -1563,9 +1508,9 @@
 				<img src="images/detailsquare1.jpg" height="75" width="75">
 				&nbsp; <img src="images/detailsquare2.jpg" height="75" width="75">&nbsp;
 				<img src="images/detailsquare3.jpg" height="75" width="75">
-				&nbsp; <br>
-				<br> <img src="images/detailsquare1.jpg" height="75" width="75">
-				&nbsp; <img src="images/detailsquare2.jpg" height="75" width="75">&nbsp;
+				&nbsp; <br> <br> <img src="images/detailsquare1.jpg"
+					height="75" width="75"> &nbsp; <img
+					src="images/detailsquare2.jpg" height="75" width="75">&nbsp;
 				<img src="images/detailsquare3.jpg" height="75" width="75">
 				&nbsp;
 			</div>
